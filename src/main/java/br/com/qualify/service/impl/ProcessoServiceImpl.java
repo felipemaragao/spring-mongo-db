@@ -41,7 +41,8 @@ public class ProcessoServiceImpl implements ProcessoService{
 	
 	@Override
 	public List<Processo> findByComarca(String comarca){
-		return this.processoRepository.getProcessoForComarca(comarca);
+		return  this.processoRepository.getProcessoForComarca(comarca)
+				.orElseThrow(() -> new IllegalArgumentException("Processo não encotnrado"));
 	}
 
 }

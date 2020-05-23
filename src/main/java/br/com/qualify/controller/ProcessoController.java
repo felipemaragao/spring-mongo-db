@@ -57,7 +57,7 @@ public class ProcessoController {
 			return ResponseEntity.status(HttpStatus.CREATED)
 				.body(this.processoService.add(processo));
 		} catch (IllegalArgumentException e) {
-			return ResponseEntity.badRequest().build();
+			return ResponseEntity.notFound().build();
 		}
 	}
 
